@@ -8,7 +8,7 @@
     </parent>
 
     <groupId>com.jmye.spring6.ioc</groupId>
-    <artifactId>spring6-ioc</artifactId>
+    <artifactId>spring6-ioc-xml</artifactId>
     <packaging>jar</packaging>
 
     <name>spring6-ioc</name>
