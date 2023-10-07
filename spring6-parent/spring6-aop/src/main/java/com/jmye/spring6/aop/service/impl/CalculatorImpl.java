@@ -1,6 +1,7 @@
 package com.jmye.spring6.aop.service.impl;
 
 import com.jmye.spring6.aop.service.Calculator;
+import org.springframework.stereotype.Service;
 
 /**
  * @Description
@@ -8,6 +9,7 @@ import com.jmye.spring6.aop.service.Calculator;
  * @Time 2023/10/6 17:32
  * @Version 1.0
  */
+@Service
 public class CalculatorImpl implements Calculator {
     @Override
     public int add(int i, int j) {
