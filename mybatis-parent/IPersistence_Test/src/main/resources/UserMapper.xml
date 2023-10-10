@@ -1,0 +1,11 @@
+<mapper namespace="user">
+
+    <select id="selectList" resultType="com.jmye.mybatis.ipersistence.pojo.User">
+        select * from user
+    </select>
+
+    <select id="selectOne" parameterType="com.jmye.mybatis.ipersistence.pojo.User" resultType="com.jmye.mybatis.ipersistence.pojo.User">
+        select * from user where id = ? and username = ?
+    </select>
+
+</mapper>
