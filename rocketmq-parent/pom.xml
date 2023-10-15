@@ -12,6 +12,7 @@
   <modules>
     <module>rocketmq-demo</module>
     <module>boot-producer-demo</module>
+    <module>boot-consumer-demo</module>
   </modules>
 
   <properties>
