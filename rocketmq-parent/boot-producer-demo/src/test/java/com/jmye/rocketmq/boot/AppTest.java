@@ -22,4 +22,11 @@ public class AppTest {
         System.out.println("消息发送成功!");
     }
 
+    @Test
+    void testSendTransactionMessage() throws Exception {
+        String topic = "boot-topic";
+        String message = "hello transaction spring boot rocketmq";
+        producer.sendMessageInTransaction(topic, message);
+    }
+
 }
