@@ -14,6 +14,7 @@
     <module>boot-producer-demo</module>
     <module>boot-consumer-demo</module>
     <module>cloud-producer-demo</module>
+    <module>cloud-consumer-demo</module>
   </modules>
 
   <properties>
