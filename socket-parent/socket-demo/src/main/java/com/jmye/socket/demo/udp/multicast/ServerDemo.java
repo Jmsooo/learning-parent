@@ -1,4 +1,4 @@
-package com.jmye.socket.demo.multicast;
+package com.jmye.socket.demo.udp.multicast;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

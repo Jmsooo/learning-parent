@@ -1,4 +1,4 @@
-package com.jmye.socket.demo.base;
+package com.jmye.socket.demo.udp.base;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
