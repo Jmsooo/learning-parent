@@ -1,0 +1,23 @@
+server:
+  port: 8761  # EurekaServer 的端口, 其它端口报错
+
+spring:
+  application:
+    name: eureka-server # 服务名称
+
+eureka:
+  client:
+    service-url:  # Eureka 服务端和客户端的交互地址, 集群用逗号隔开
+      defaultZone: http://localhost:9761/eureka/
+    fetch-registry: true  # 是否拉取服务列表
+    register-with-eureka: true  # 是否注册自己(单机一般关闭注册自己, 集群打开)
+  server:
+    eviction-interval-timer-in-ms: 30000  # 清除无效节点的频率(毫秒), 定期清除
+    enable-self-preservation: true  # Eureka 的自我保护机制, 避免因为网络原因造成误删除, 生产环境建议打开
+    renewal-percent-threshold: 0.85 # 85%, 如果在一个机房的client端, 15分钟内有85%的client没有续约, 那么可能是网络原因, 认为服务实例没有问题, 不会剔除它们
+  instance:
+    hostname: localhost # 服务主机名称
+    instance-id: ${eureka.instance.hostname}:${spring.application.name}:${server.port}  # 实例 ID
+    prefer-ip-address: true   # 服务列表以 ip 的形式展示
+    lease-renewal-interval-in-seconds: 10   # 表示 Eureka Client 发送心跳给 Server 端的频率
+    lease-expiration-duration-in-seconds: 20  # 表示 Eureka Server 至上一次收到的 Client 心跳之后, 等待下一次心跳的超时时间, 在这个时间内若没收到下一次心跳, 则移除该实例
