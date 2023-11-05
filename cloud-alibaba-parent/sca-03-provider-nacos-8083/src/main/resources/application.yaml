@@ -1,0 +1,40 @@
+server:
+  port: 8083
+
+spring:
+  jpa:
+    # 指定是否在 Spring 容器启动时创建表, 默认: false
+    generate-ddl: true
+    # 指定是否在控制台显示 SQL
+    show-sql: true
+    # 指定应用重启时不重复更新表
+    hibernate:
+      ddl-auto: none
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://127.0.0.1:3308/cloud-alibaba?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: root
+
+  application:
+    name: nacos-provider-depart
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+
+logging:
+  pattern:
+    console: level-%level %msg%n
+  level:
+    root: info
+    org.hibernate: info
+    # 在 show-sql 为 true 时, 显示 SQL 中的动态参数值
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    # 在 show-sql 为 true 时, 显示查询的结果
+    org.hibernate.type.descriptor.sql.BasicExtractor: trace
+    com.jmye.cloud: debug
