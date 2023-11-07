@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: nacos-config-provider
+
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        namespace: 9cdd3af9-26ed-4e04-b3fe-b7e9406abcc9
+        username: nacos
+        password: nacos
+
+        # 同一个 group 中的不同服务可以共享以下 "共享配置"
+        shared-configs[0]:
+          data-id: shared-config.yaml
+          refresh: true
+
+        # 不同 group 中的不同服务可以共享以下 "扩展配置"
+        extension-configs[0]:
+          data-id: extension-config.yaml
+          refresh: true
+
+
+  config:
+    import:
+      - optional:nacos:${spring.application.name}.${spring.cloud.nacos.config.file-extension}
