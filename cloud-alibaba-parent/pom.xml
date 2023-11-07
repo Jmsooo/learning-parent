@@ -15,6 +15,7 @@
     <module>sca-03-provider-nacos-8083</module>
     <module>sca-04-consumer-nacos-8084</module>
     <module>sca-05-provider-nacos-config-8085</module>
+    <module>sca-07-consumer-feign-8087</module>
   </modules>
 
   <properties>
